@@ -19,7 +19,6 @@ pipeline{
     }
   }
           steps{
-            sh 'sudo systemctl status jenkins'
             sh 'ps -ef'
           }
         }
