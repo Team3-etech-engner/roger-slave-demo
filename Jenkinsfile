@@ -12,12 +12,12 @@ pipeline{
     }
      stage('parallel-job 1'){
       parallel{
-        agent {
+        stage('sub-job1 - Roger'){
+           agent {
     label {
       label 'slave2'
     }
   }
-        stage('sub-job1 - Roger'){
           steps{
             sh 'sudo systemctl status jenkins'
             sh 'ps -ef'
@@ -33,12 +33,12 @@ pipeline{
     }
     stage('parallel-job 2'){
       parallel{
-        agent {
+        stage('sub-job1 - Constance'){
+           agent {
     label {
       label 'slave3'
     }
   }
-        stage('sub-job1 - Constance'){
           steps{
             sh 'ps -ef'
             sh 'sudo systemctl status jenkins'
