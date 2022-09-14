@@ -26,7 +26,6 @@ pipeline{
           stage('sub-job2 - Kingue'){
            steps{
             sh 'ps -ef'
-            sh 'sudo systemctl status jenkins'
           }
         }
       }
@@ -41,12 +40,10 @@ pipeline{
   }
           steps{
             sh 'ps -ef'
-            sh 'sudo systemctl status jenkins'
           }
         }
         stage('sub-job2 - Wille'){
           steps{
-            sh 'sudo systemctl status jenkins'
             sh 'ps -ef'
           }
         }
