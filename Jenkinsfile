@@ -1,10 +1,8 @@
-pipeline{
+ipeline{
   agent {
     label {
       label 'slave1'
-
     }
-
   }
   stages{
     stage('git-clone - Sithabile'){
@@ -13,12 +11,12 @@ pipeline{
         }
     }
      stage('parallel-job 1'){
+      parallel{
         agent {
     label {
       label 'slave2'
     }
   }
-      parallel{
         stage('sub-job1 - Roger'){
           steps{
             sh 'sudo systemctl status jenkins'
@@ -34,12 +32,12 @@ pipeline{
       }
     }
     stage('parallel-job 2'){
+      parallel{
         agent {
     label {
       label 'slave3'
     }
   }
-      parallel{
         stage('sub-job1 - Constance'){
           steps{
             sh 'ps -ef'
